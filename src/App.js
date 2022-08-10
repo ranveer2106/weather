@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Footer from './components/footer';
+import Body from './components/homebody';
+import Navbar from './components/navbar';
+import Projects from './components/projects';
+import Sidebars from './components/sidebars';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Navbar title="RANVIR" />
+        <Sidebars />
+        <Footer />
+        <Routes>
+          <Route exact path="/" element={<Body class="project" btn="btn" appear="pNo fadeUp dis" />} />
+          <Route exact path=" " element={<Body class="project" btn="btn" appear="pNo fadeUp dis" />} />
+          <Route exact path="/portfolio" element={<Body class="project" btn="btn" appear="pNo fadeUp dis" />} />
+          <Route exact path="/projects" element={<Projects class="project" btn="btn" appear="pNo fadeUp" />} />
+          {/* <Route/> */}
+        </Routes>
+      </Router>
+    </>
   );
 }
 
