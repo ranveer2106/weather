@@ -1,44 +1,50 @@
+// import { json } from 'express';
 import React from 'react'
-import PropTypes from 'prop-types'
-import "./component.css"
-import { useState } from "react";
-import { Link } from 'react-router-dom';
+// import {
+// useEffect,
+// useState
+// } from "react";
+import logo from "./logo.png"
 
-export default function Navbar(props) {
-  const [isActive, setActive] = useState("false");
-  let print = () => {
-    setActive(!isActive);
-  }
+export default function Navbar() {
+    // const [x, setx] = useState()
+    // let a = 0
+    // useEffect(() => {
+    //     return () => {
+    //         const url = "https://api.open-meteo.com/v1/forecast?latitude=28.6353&longitude=77.2250&hourly=temperature_2m,rain,windspeed_10m";
+    //         const fetchData = async () => {
+    //             try {
+    //                 const response = await fetch(url);
+    //                 const json = await response.json();
+    //                 const ans = JSON.parse(JSON.stringify(json));
+    //                 // setx(JSON.parse(JSON.stringify(json)))
+    //                 // console.log((`${JSON.parse(json)["hourly_units"]["time"]} he`));
+    //                 console.log(ans["latitude"])
+    //                 console.log(ans.longitude)
+    //                 setx(ans.hourly.time[0])
+
+    //             } catch (error) {
+    //                 console.log("error", error);
+    //             }
+    //         };
+    //         fetchData();
+    //     }
+    // })
+
+    return (
+        <>
+            <div className='flex navbar justify-around py-2'>
+                <div className="logo">
+                    <img src={logo} alt="hi" />
+                </div>
+                <div className="options">
+                    <ul className='flex'>
+                        <li className='px-1 mx-2'><a href="/">home</a></li>
+                    </ul>
+                </div>
 
 
-  return (
-    <nav className='navbar'>
-      <div>
-        <h1 className='fadeUp'><Link id='title' className='link' to="/">{props.title}</Link></h1>
-      </div>
-      <div id='options' className={`options ${isActive ? "actives" : "active"}`}>
-        <ul className={`options ${isActive ? "actives" : "active"}`}>
-          {/* <li><Link className='link' to="/">Home</Link</li> */}
-          <li className='items fadeUp'><Link className='link navl' to="/">Home</Link></li>
-          <li className='items fadeUp'><a className='link navl' target="_blank" rel="noreferrer" href={require('./Resume.pdf')}>Resume</a></li>
-          {/* <li className='items fadeUp'><Link className='link navl' to="/">Resume</Link></li> */}
-          <li className='items fadeUp'><Link className='link navl' to="/projects">Projects</Link></li>
-          <li className='items fadeUp'><a className='link navl' href="mailto:ranveerbhatti2106@gmail.com">Contact</a></li>
-          {/* <li className=' fadeUp'><button to="/" className='fadeUp' id='btn'>Resume</button></li> */}
-
-        </ul>
-      </div>
-      <div className={`hamburger ${isActive ? "notActive" : "active"}`} onClick={print} >
-        <span id='one' className={`bar ${isActive ? "notActive" : "active"}`}></span>
-        <span id='two' className={`bar ${isActive ? "notActive" : "active"}`}></span>
-        <span id='three' className={`bar ${isActive ? "notActive" : "active"}`}></span>
-      </div>
-    </nav >
-  )
+            </div>
+        </>
+    )
 }
-
-Navbar.propTypes = {
-  title: PropTypes.string
-}
-
-// export default Navbar

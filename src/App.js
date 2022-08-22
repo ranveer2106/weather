@@ -1,28 +1,37 @@
 import './App.css';
-import Footer from './components/footer';
-import Body from './components/homebody';
-import Navbar from './components/navbar';
-import Projects from './components/projects';
-import Sidebars from './components/sidebars';
+import City from './components/city';
+// import Body from './components/body';
+import Navbar from './components/navbar.js';
+
 import {
   BrowserRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
+// import Example from './components/Navbar.js';
+// import {
+// useState,
+// useEffect
+// } from 'react';
+
 
 function App() {
+
+
   return (
     <>
+
+
+      {/* <City /> */}
+      {/* <Body /> */}
       <Router>
-        <Navbar title="RANVIR" />
-        <Sidebars />
-        <Footer />
+        <Navbar />
+        {/* <Navbar title="RANVIR" /> */}
+        {/* <Sidebars /> */}
+        {/* <Footer /> */}
         <Routes>
-          <Route exact path="/" element={<Body class="project" btn="btn" appear="pNo fadeUp dis" />} />
-          <Route exact path=" " element={<Body class="project" btn="btn" appear="pNo fadeUp dis" />} />
-          <Route exact path="/portfolio" element={<Body class="project" btn="btn" appear="pNo fadeUp dis" />} />
-          <Route exact path="/projects" element={<Projects class="project" btn="btn" appear="pNo fadeUp" />} />
-          {/* <Route/> */}
+          <Route exact path="/" element={<City />} />
+
         </Routes>
       </Router>
     </>

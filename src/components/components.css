@@ -1,0 +1,51 @@
+body{
+    /* background-color: #72FFFF; */
+    background-color: #5CC2F2;
+    color: #191BA9;
+}
+.navbar{
+    background-color: #F7F3F3;
+    width: 100%;
+    align-items: center;
+}
+.logo{
+    width: 4rem;
+}
+.body{
+    background-color: #C1EAF2;
+    width: 87%;
+    margin: 2rem auto;
+    border-radius: 20px;
+    padding: 2rem;
+    align-items: center;
+}
+#heading{
+    font-size: 3rem;
+    font-weight: bold;
+}
+#datalist{
+    /* padding: 1rem; */
+    height: 3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.city{
+    width: 100%;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+.timing{
+    width: 77rem;
+    justify-content: space-between;
+}
+.times{
+    width: 15rem;
+    border: 2px solid rebeccapurple;
+}
+.week{
+    width :77rem;
+    justify-content: space-between;
+}
+.weekdays{
+    border: 2px solid black;
+    width: 10rem;
+}
