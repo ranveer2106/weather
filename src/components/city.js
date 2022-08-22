@@ -95,8 +95,8 @@ export default function City(props) {
         <div>
             <h1 id='heading'>{city}</h1>
             <select id='datalist' className='px-3 rounded-md' onChange={change} defaultValue={localStorage.city} >
-                <option value="Your Location">Your Location</option>
                 <option value="New Delhi">New Delhi</option>
+                <option value="Your Location">Your Location</option>
                 <option value="Kolkata">Kolkata</option>
                 <option value="Mumbai">Mumbai</option>
             </select>
