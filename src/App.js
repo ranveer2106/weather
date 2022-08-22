@@ -26,6 +26,7 @@ function App() {
       {/* <Body /> */}
       <Router>
         <Navbar />
+        <City />
         {/* <Navbar title="RANVIR" /> */}
         {/* <Sidebars /> */}
         {/* <Footer /> */}
