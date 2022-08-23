@@ -26,12 +26,12 @@ function App() {
       {/* <Body /> */}
       <Router>
         <Navbar />
-        <City />
+        {/* <City /> */}
         {/* <Navbar title="RANVIR" /> */}
         {/* <Sidebars /> */}
         {/* <Footer /> */}
         <Routes>
-          <Route exact path="/" element={<City />} />
+          <Route exact path="/weather" element={<City />} />
 
         </Routes>
       </Router>

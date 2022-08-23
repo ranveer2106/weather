@@ -51,6 +51,7 @@ export default function City(props) {
             setlongitude(position.coords.longitude)
             console.log("Longitude is :", position.coords.longitude);
             console.log("Longitude is :", position.coords.latitude);
+
             // show()
         });
         // let lat =
@@ -63,15 +64,8 @@ export default function City(props) {
             // console.log("not emty")
         }
         else {
-            if (localStorage.city === "Your Location") {
-                localStorage.removeItem("city", "Your Location")
-                localStorage.setItem("city", "New Delhi")
-                location(localStorage.city)
-            }
-            else {
-                location(localStorage.city)
-            }
-
+            document.getElementById("heading").textContent = localStorage.city
+            location(localStorage.city)
             // console.log(props.l, "11")
         }
     });
@@ -88,15 +82,23 @@ export default function City(props) {
         localStorage.setItem(`city`, `${x.text}`);
         console.log(new Date(), "date")
     }
+    // let current = () => {
+    //     let head = document.getElementById("heading")
+    //     head.textContent = "Your Location"
+    //     localStorage.removeItem("city")
+    //     localStorage.setItem(`city`, `Your Location`)
+    //     location(localStorage.city)
+    // }
 
 
     const [city, setcity] = useState(localStorage.city)
     return (
         <div>
             <h1 id='heading'>{city}</h1>
+            {/* <button onClick={current}>Get location Weather</button> */}
             <select id='datalist' className='px-3 rounded-md' onChange={change} defaultValue={localStorage.city} >
                 <option value="New Delhi">New Delhi</option>
-                <option value="Your Location">Your Location</option>
+                {/* <option value="Your Location">Your Location</option> */}
                 <option value="Kolkata">Kolkata</option>
                 <option value="Mumbai">Mumbai</option>
             </select>
