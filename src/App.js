@@ -1,40 +1,22 @@
 import './App.css';
 import City from './components/city';
-// import Body from './components/body';
-import Navbar from './components/navbar.js';
-
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
-// import Example from './components/Navbar.js';
-// import {
-// useState,
-// useEffect
-// } from 'react';
-
+import { useState, useEffect } from 'react';
 
 function App() {
+  const [lat, setlat] = useState("")
+  const [lon, setlon] = useState("")
 
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      setlat(position.coords.latitude);
+      setlon(position.coords.longitude);
+    });
+
+  }, [])
 
   return (
     <>
-
-
-      {/* <City /> */}
-      {/* <Body /> */}
-      <Router>
-        <Navbar />
-        {/* <City /> */}
-        {/* <Navbar title="RANVIR" /> */}
-        {/* <Sidebars /> */}
-        {/* <Footer /> */}
-        <Routes>
-          <Route exact path="/weather" element={<City />} />
-
-        </Routes>
-      </Router>
+      <City latitude={lat} longitude={lon} />
     </>
   );
 }
