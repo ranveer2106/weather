@@ -55,17 +55,24 @@ export default function City(props) {
     }
 
     return (
-        <div>
-            <h1 id='heading'>{city}</h1>
-            <button onClick={current}>Get location Weather</button>
-            <select id='datalist' className='px-3 rounded-md' onChange={change} defaultValue={city} >
-                <option value="New Delhi">New Delhi</option>
-                <option value="Kolkata">Kolkata</option>
-                <option value="Mumbai">Mumbai</option>
-                <option value="Your Location">Your Location</option>
-            </select>
-            <Body coOrdinate={cordinate} />
+        <>
+            <div id='container'>
+                <div className="nav flex justify-between">
+                    <h1 id='heading'>{city}</h1>
+                    <div>
+                        <button onClick={current} className="mx-8 white yl"><i className="fa fa-map-marker" aria-hidden="true"></i>
+                        </button>
+                        <select id='datalist' className='px-3 rounded-md' onChange={change} defaultValue={city} >
+                            <option className='dataopt' value="New Delhi">New Delhi</option>
+                            <option className='dataopt' value="Kolkata">Kolkata</option>
+                            <option className='dataopt' value="Mumbai">Mumbai</option>
+                            <option className='dataopt' value="Your Location">Your Location</option>
+                        </select>
+                    </div>
+                </div>
+                <Body coOrdinate={cordinate} />
 
-        </div>
+            </div>
+        </>
     )
 }

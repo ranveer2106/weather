@@ -13,14 +13,15 @@ function Body(props) {
     const [wind, setwind] = useState([])
     const [Temprature, setTemprature] = useState([])
     const [skip, setskip] = useState(true)
-    let timo = [1, 2, 3, 4]
+    let timo = [0, 1, 2, 3]
     useEffect(() => {
         if (skip) {
             setskip(false)
         }
         else {
             const fetchData = async () => {
-                const url = `https://api.open-meteo.com/v1/forecast?${props.coOrdinate}&hourly=temperature_2m,rain,cloudcover,windspeed_10m&daily=temperature_2m_max,temperature_2m_min&current_weather=true&timezone=auto`
+                // const url = `https://api.open-meteo.com/v1/forecast?${props.coOrdinate}&hourly=temperature_2m,rain,cloudcover,windspeed_10m&daily=temperature_2m_max,temperature_2m_min&current_weather=true&timezone=auto`
+                const url = `https://api.open-meteo.com/v1/forecast?${props.coOrdinate}&hourly=temperature_2m,relativehumidity_2m,rain,cloudcover,windspeed_10m&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,rain_sum,windspeed_10m_max&current_weather=true&timezone=auto`
                 const response = await fetch(url);
                 const json = await response.json();
                 const ans = JSON.parse(JSON.stringify(json));
@@ -46,11 +47,14 @@ function Body(props) {
                 <div className='flex justify-between city'>
                     <h1 id='heading'>{temp}degree</h1>
                 </div>
+                <h1 className='forecast'>Today's ForeCast</h1>
                 <div className='timing flex'>
                     {timo.map((element) => {
-                        return <Times key={element} cloud={cloud[1 + (element * 6)]} temp={Temprature[1 + (element * 6)]} wind={wind[1 + (element * 6)]} date={weekDate[0]} />
+                        let dayTime = ["Morning", "Afternoon", "Evening", "Night"]
+                        return <Times key={element} time={dayTime[element]} cloud={cloud[1 + (element * 6)]} temp={Temprature[1 + (element * 6)]} wind={wind[1 + (element * 6)]} date={weekDate[0]} />
                     })}
                 </div>
+                <h1 className='forecast'>Weekly ForeCast</h1>
                 <div className="week flex my-8">
                     {weekDate.map((element) => {
                         let inde = weekDate.findIndex((i) => i === element)

@@ -6,9 +6,9 @@ export default function Weekdays(props) {
         <>
             <div className="block text-center weekdays">
                 <h1>{time}</h1>
-                <h2> Temprature : {tempMin}-{tempMax} C </h2>
+                <h2> {tempMin}&deg;C-{tempMax}&deg;C </h2>
                 <h2>Cloudy : {cloud}%</h2>
-                <h2>windspeed: {wind}km/h</h2>
+                <h2>windspeed:{wind}km/h</h2>
             </div>
         </>
     )

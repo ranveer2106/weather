@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Edu+VIC+WA+NT+Beginner&family=Fredoka+One&family=Tiro+Gurmukhi&display=swap');
+
 body{
+    font-family: 'Baloo Bhaijaan 2', cursive;
     /* background-color: #72FFFF; */
-    background-color: #5CC2F2;
-    color: #191BA9;
+    background-color: #377bef;
+    /* background-color: yellow; */
+    color: white;
+    
 }
 .navbar{
     background-color: #F7F3F3;
@@ -11,22 +16,47 @@ body{
 .logo{
     width: 4rem;
 }
-.body{
-    background-color: #C1EAF2;
-    width: 87%;
-    margin: 2rem auto;
-    border-radius: 20px;
-    padding: 2rem;
-    align-items: center;
+.yl{
+    color: white;
+    font-size: 1.5rem;
+    transition: 0.2s ease;
 }
+.yl:hover{
+    font-size: 1.7rem;
+}
+#container{
+
+    background: rgba(255, 255, 255, 0.44);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.4px);
+    -webkit-backdrop-filter: blur(3.4px);
+    border: 3px solid rgba(255, 255, 255, 1);
+        width: 87%;
+        margin: 2rem auto;
+        border-radius: 20px;
+        padding: 2rem;
+        align-items: center;
+}
+
 #heading{
     font-size: 3rem;
     font-weight: bold;
 }
 #datalist{
-    /* padding: 1rem; */
+    background-color: #377bef;
     height: 3rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+
+}
+.dataopt:hover{
+    background-color: white;
+    color: #377bef;
+}
+.forecast{
+    font-size: 2rem;
+    margin-top: 1rem;
 }
 .city{
     width: 100%;
@@ -46,6 +76,8 @@ body{
     justify-content: space-between;
 }
 .weekdays{
-    border: 2px solid black;
+    border: 2px solid white;
     width: 10rem;
+    border-radius: 1rem;
+    padding: 1rem 0.5rem;
 }
