@@ -45,17 +45,17 @@ function Body(props) {
         <>
             <div className='body flex justify-between flex-col'>
                 <div className='flex justify-between city'>
-                    <h1 id='heading'>{temp}degree</h1>
+                    <h1 id='heading'>{temp}&deg;C</h1>
                 </div>
                 <h1 className='forecast'>Today's ForeCast</h1>
-                <div className='timing flex'>
+                <div className='timing flex flex-wrap'>
                     {timo.map((element) => {
                         let dayTime = ["Morning", "Afternoon", "Evening", "Night"]
                         return <Times key={element} time={dayTime[element]} cloud={cloud[1 + (element * 6)]} temp={Temprature[1 + (element * 6)]} wind={wind[1 + (element * 6)]} date={weekDate[0]} />
                     })}
                 </div>
                 <h1 className='forecast'>Weekly ForeCast</h1>
-                <div className="week flex my-8">
+                <div className="week flex my-8 flex-wrap">
                     {weekDate.map((element) => {
                         let inde = weekDate.findIndex((i) => i === element)
                         return <Weekdays key={element} time={element} tempMax={weekMaxTemp[inde]} tempMin={weekMinTemp[inde]} cloud={cloud[13 + inde * 24]} wind={wind[13 + inde * 24]} />

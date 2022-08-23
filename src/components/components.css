@@ -64,16 +64,18 @@ body{
     margin-bottom: 4rem;
 }
 .timing{
-    width: 77rem;
+    /* width: 77rem; */
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .times{
     width: 15rem;
     border: 2px solid rebeccapurple;
 }
 .week{
-    width :77rem;
+    /* width :77rem; */
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .weekdays{
     border: 2px solid white;

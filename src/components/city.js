@@ -57,7 +57,7 @@ export default function City(props) {
     return (
         <>
             <div id='container'>
-                <div className="nav flex justify-between">
+                <div className="nav flex justify-between flex-wrap">
                     <h1 id='heading'>{city}</h1>
                     <div>
                         <button onClick={current} className="mx-8 white yl"><i className="fa fa-map-marker" aria-hidden="true"></i>
