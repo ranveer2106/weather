@@ -13,6 +13,10 @@ function Body(props) {
     const [wind, setwind] = useState([])
     const [Temprature, setTemprature] = useState([])
     const [skip, setskip] = useState(true)
+    const [sunRise, setsunRise] = useState("")
+    const [sunSet, setsunSet] = useState("")
+    const [cws, setcws] = useState("")
+
     let timo = [0, 1, 2, 3]
     useEffect(() => {
         if (skip) {
@@ -32,6 +36,9 @@ function Body(props) {
                 setcloud(ans.hourly.cloudcover)
                 setwind(ans.hourly.windspeed_10m)
                 setTemprature(ans.hourly.temperature_2m)
+                setsunRise(ans.daily.sunrise)
+                setsunSet(ans.daily.sunset)
+                setcws(ans.current_weather.windspeed)
             };
 
             fetchData();
@@ -45,7 +52,20 @@ function Body(props) {
         <>
             <div className='body flex justify-between flex-col'>
                 <div className='flex justify-between city'>
-                    <h1 id='heading'>{temp}&deg;C</h1>
+                    <div className='container text-left'>
+                        <h1 id='heading'>{temp}&deg;C</h1>
+                    </div>
+                    <div className='flex container justify-between'>
+                        <div>
+                            <h1>Sun Rise : {sunRise[0]}</h1>
+                        </div>
+                        <div>
+                            <h1>Sun Set : {sunSet[0]}</h1>
+                        </div>
+                        <div>
+                            <h1>Wind Speed : {cws}Km/h</h1>
+                        </div>
+                    </div>
                 </div>
                 <h1 className='forecast'>Today's ForeCast</h1>
                 <div className='timing flex flex-wrap'>
@@ -58,7 +78,7 @@ function Body(props) {
                 <div className="week flex my-8 flex-wrap">
                     {weekDate.map((element) => {
                         let inde = weekDate.findIndex((i) => i === element)
-                        return <Weekdays key={element} time={element} tempMax={weekMaxTemp[inde]} tempMin={weekMinTemp[inde]} cloud={cloud[13 + inde * 24]} wind={wind[13 + inde * 24]} />
+                        return <Weekdays key={element} sunrise={sunRise[inde]} sunset={sunSet[inde]} time={element} tempMax={weekMaxTemp[inde]} tempMin={weekMinTemp[inde]} cloud={cloud[13 + inde * 24]} wind={wind[13 + inde * 24]} />
                     })}
                 </div>
             </div>

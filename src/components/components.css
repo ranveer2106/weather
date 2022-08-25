@@ -59,6 +59,7 @@ body{
     margin-top: 1rem;
 }
 .city{
+    flex-direction: column;
     width: 100%;
     align-items: center;
     margin-bottom: 4rem;
