@@ -1,30 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Edu+VIC+WA+NT+Beginner&family=Fredoka+One&family=Tiro+Gurmukhi&display=swap');
 
-body{
+body {
     font-family: 'Baloo Bhaijaan 2', cursive;
     /* background-color: #72FFFF; */
     background-color: #377bef;
     /* background-color: yellow; */
     color: white;
-    
+
 }
-.navbar{
+
+.navbar {
     background-color: #F7F3F3;
     width: 100%;
     align-items: center;
 }
-.logo{
+
+.logo {
     width: 4rem;
 }
-.yl{
+
+.yl {
     color: white;
     font-size: 1.5rem;
     transition: 0.2s ease;
 }
-.yl:hover{
+
+.yl:hover {
     font-size: 1.7rem;
 }
-#container{
+
+#container {
 
     background: rgba(255, 255, 255, 0.44);
     border-radius: 16px;
@@ -32,55 +37,67 @@ body{
     backdrop-filter: blur(3.4px);
     -webkit-backdrop-filter: blur(3.4px);
     border: 3px solid rgba(255, 255, 255, 1);
-        width: 87%;
-        margin: 2rem auto;
-        border-radius: 20px;
-        padding: 2rem;
-        align-items: center;
+    width: 87%;
+    margin: 2rem auto;
+    border-radius: 20px;
+    padding: 2rem;
+    align-items: center;
 }
 
-#heading{
+#heading {
     font-size: 3rem;
     font-weight: bold;
 }
-#datalist{
+
+#datalist {
     background-color: #377bef;
     height: 3rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-family: 'Baloo Bhaijaan 2', cursive;
 
 }
-.dataopt:hover{
+
+.dataopt:hover {
     background-color: white;
     color: #377bef;
 }
-.forecast{
+
+.forecast {
     font-size: 2rem;
     margin-top: 1rem;
 }
-.city{
+
+.city {
     flex-direction: column;
     width: 100%;
     align-items: center;
     margin-bottom: 4rem;
 }
-.timing{
+
+.timing {
     /* width: 77rem; */
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.times{
+
+.times {
     width: 15rem;
     border: 2px solid rebeccapurple;
 }
-.week{
+
+.week {
     /* width :77rem; */
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.weekdays{
+
+.weekdays {
     border: 2px solid white;
     width: 10rem;
     border-radius: 1rem;
     padding: 1rem 0.5rem;
+}
+
+.details {
+    font-size: 1.3rem;
 }

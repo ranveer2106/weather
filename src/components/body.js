@@ -24,7 +24,6 @@ function Body(props) {
         }
         else {
             const fetchData = async () => {
-                // const url = `https://api.open-meteo.com/v1/forecast?${props.coOrdinate}&hourly=temperature_2m,rain,cloudcover,windspeed_10m&daily=temperature_2m_max,temperature_2m_min&current_weather=true&timezone=auto`
                 const url = `https://api.open-meteo.com/v1/forecast?${props.coOrdinate}&hourly=temperature_2m,relativehumidity_2m,rain,cloudcover,windspeed_10m&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,rain_sum,windspeed_10m_max&current_weather=true&timezone=auto`
                 const response = await fetch(url);
                 const json = await response.json();
@@ -48,6 +47,7 @@ function Body(props) {
 
     }, [props.coOrdinate, skip])
 
+
     return (
         <>
             <div className='body flex justify-between flex-col'>
@@ -57,13 +57,13 @@ function Body(props) {
                     </div>
                     <div className='flex container justify-between'>
                         <div>
-                            <h1>Sun Rise : {sunRise[0]}</h1>
+                            <h1 className='details'>Sun Rise : {sunRise[0]}</h1>
                         </div>
                         <div>
-                            <h1>Sun Set : {sunSet[0]}</h1>
+                            <h1 className='details'>Sun Set : {sunSet[0]}</h1>
                         </div>
                         <div>
-                            <h1>Wind Speed : {cws}Km/h</h1>
+                            <h1 className='details'>Wind Speed : {cws}Km/h</h1>
                         </div>
                     </div>
                 </div>

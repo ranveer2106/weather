@@ -38,7 +38,6 @@ export default function City(props) {
 
 
     let change = () => {
-        console.log()
         let data = document.getElementById("datalist");
         let x = data.options[data.selectedIndex]
         let head = document.getElementById("heading")
